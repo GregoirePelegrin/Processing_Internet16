@@ -1,18 +1,35 @@
+Square square;
+
+int maxRand;
 int nbrNodes;
-float sizeCube;
-Cube cube;
+float sizeSquare;
+float nodeSize;
+
+int count;
+int fRate;
 
 void setup(){
-  size(600, 600, P3D);
-  frameRate(30);
+  size(600, 600);
+  frameRate(2);
+  fill(0, 150);
+  stroke(0, 150);
+  /*frameRate(30);
+  background(255);
+  fill(0, 10);
+  stroke(0, 10);*/
   
-  nbrNodes = 2;
-  sizeCube = 30;
-  cube = new Cube(nbrNodes);
+  maxRand = 30;
+  nbrNodes = 6;
+  sizeSquare = 300;
+  nodeSize = 10;
+  
+  square = new Square();
 }
 
 void draw(){
-  background(0);
+  background(255);
+  translate(width/4, height/4);
   
-  cube.display();
+  square.update();
+  square.display();
 }
